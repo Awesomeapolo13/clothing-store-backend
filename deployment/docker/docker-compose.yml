@@ -4,7 +4,7 @@ services:
   php-fpm:
     container_name: php-fpm
     build:
-      # Указываем где находится проект, к которому применяется сборка
+      # Указываем, где находится проект, к которому применяется сборка
       context: ./../../
       dockerfile: ./deployment/docker/php-fpm/Dockerfile
       args:
