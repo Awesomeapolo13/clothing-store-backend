@@ -4,6 +4,16 @@ FROM php:8.1.0-fpm-alpine
 # --no-cache - for the fast packeges installation
 RUN apk add --no-cache curl git build-base zlib-dev oniguruma-dev autoconf bash
 
+# Если аргумент INSTALL_XDEBUG будет равен true, тоустанавливаем xdebug (теперь можно исп. этот файл и для прод. деплоя)
+ARG INSTALL_XDEBUG=false
+# Подтягиваем зависимости для xdebug и включаем расширение xdebug в php.ini
+RUN if [ ${INSTALL_XDEBUG} = true ];  \
+    then \
+      pecl install xdebug && docker-php-ext-enable xdebug; \
+    fi;
+# Пробрасываем xdebug.ini в контейнер php
+COPY ./deployment/docker/php-fpm/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+
 ## Configure non-root user
 ARG PUID=1000
 ARG PGID=1000
