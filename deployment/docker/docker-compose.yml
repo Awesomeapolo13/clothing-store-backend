@@ -14,7 +14,6 @@ services:
     environment:
       PHP_IDE_CONFIG: "serverName=Clothing-store"
     volumes:
-      - /var/www/vendor/
       - ./../../:/var/www/
 
   nginx-store:
