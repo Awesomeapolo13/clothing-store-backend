@@ -14,6 +14,9 @@ RUN if [ ${INSTALL_XDEBUG} = true ];  \
 # Пробрасываем xdebug.ini в контейнер php
 COPY ./deployment/docker/php-fpm/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
+# Postgres
+RUN apk add --no-cache libpq-dev && docker-php-ext-install pdo_pgsql
+
 ## Configure non-root user
 ARG PUID=1000
 ARG PGID=1000
@@ -25,6 +28,8 @@ RUN apk --no-cache add shadow && \
 RUN chown www-data:www-data /var/www
 COPY --chown=www-data:www-data ./ /var/www
 WORKDIR /var/www
+
+USER www-data
 
 # Composer instalation
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
