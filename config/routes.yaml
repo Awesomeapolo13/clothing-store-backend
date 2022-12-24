@@ -11,3 +11,7 @@ api_refresh_token:
 
 api_login_check:
     path: /api/auth/token/login
+
+users:
+    resource: ../src/Users/Infrastructure/Controller/
+    type: annotation

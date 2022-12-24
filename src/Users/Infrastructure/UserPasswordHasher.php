@@ -6,12 +6,11 @@ use App\Users\Domain\Entity\User;
 use App\Users\Domain\Service\UserPasswordHasherInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface as BaseUserHasherInterface;
 
-class UserPasswordPasswordHasher implements UserPasswordHasherInterface
+class UserPasswordHasher implements UserPasswordHasherInterface
 {
     public function __construct(
         private readonly BaseUserHasherInterface $passwordHasher
-    )
-    {
+    ) {
     }
 
     public function hash(User $user, string $password): string

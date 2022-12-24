@@ -10,8 +10,8 @@ security:
                 class: App\Users\Domain\Entity\User
                 property: email
     firewalls:
-        login:
-            pattern: ^/api/auth/token/login
+        api:
+            pattern: ^/api
             stateless: true
             entry_point: jwt
             json_login:
@@ -21,16 +21,7 @@ security:
                 failure_handler: lexik_jwt_authentication.handler.authentication_failure
             jwt: ~
             refresh_jwt:
-                check_path: /api/token/refresh
-#
-#        refresh:
-#            pattern: ^/api/auth/token/refresh
-#            stateless: true
-
-        api:
-            pattern: ^/api
-            stateless: true
-            jwt: ~
+                check_path: /api/auth/token/refresh
 
     access_control:
         # Для логина
