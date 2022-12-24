@@ -14,6 +14,13 @@ doctrine:
                 prefix: 'App\Users\Domain\Entity'
                 alias: User
 
+            RefreshToken:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/src/Users/Infrastructure/Database/ORM'
+                prefix: 'App\Users\Domain\Entity'
+                alias: RefreshToken
+
 when@test:
     doctrine:
         dbal:
