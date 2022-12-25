@@ -13,7 +13,7 @@ class User implements AuthUserInterface
     private string $ulid;
     private string $email;
     /**
-     * Возможен null, например, в случае аутентификации через соц сети
+     * Возможен null, например, в случае аутентификации через соц сети.
      */
     private ?string $password = null;
 
@@ -39,7 +39,7 @@ class User implements AuthUserInterface
     }
 
     /**
-     * Возвращает информацию о ролях пользователя
+     * Возвращает информацию о ролях пользователя.
      */
     public function getRoles(): array
     {
@@ -50,14 +50,14 @@ class User implements AuthUserInterface
 
     /**
      * Очищает чувствительные данные (например пароль)
-     * Т.к. он реализуется в сущности, то использовать не рекомендуется (есть угроза удаления пользовательского пароля)
+     * Т.к. он реализуется в сущности, то использовать не рекомендуется (есть угроза удаления пользовательского пароля).
      */
     public function eraseCredentials()
     {
     }
 
     /**
-     * Возвращает электронную почту в качестве идентификатора
+     * Возвращает электронную почту в качестве идентификатора.
      */
     public function getUserIdentifier(): string
     {

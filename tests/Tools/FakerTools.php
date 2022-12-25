@@ -13,7 +13,7 @@ use Faker\Generator;
 trait FakerTools
 {
     /**
-     * Возвращает инстанс генераитора тестовых данных
+     * Возвращает инстанс генераитора тестовых данных.
      */
     public function getFaker(): Generator
     {

@@ -7,7 +7,7 @@ namespace App\Users\Domain\Service;
 use App\Users\Domain\Entity\User;
 
 /**
- * Интерфейс хеширования пароля
+ * Интерфейс хеширования пароля.
  */
 interface UserPasswordHasherInterface
 {

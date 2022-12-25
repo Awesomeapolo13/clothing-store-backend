@@ -13,7 +13,7 @@ class UserFixture extends Fixture
 {
     use FakerTools;
 
-    const REFERENCE = 'user';
+    public const REFERENCE = 'user';
 
     public function __construct(
         private readonly UserFactory $userFactory
