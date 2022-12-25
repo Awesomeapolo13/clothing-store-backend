@@ -1,0 +1,28 @@
+parameters:
+  # Директория со всеми нашими модулями.
+  paths:
+    - ./src
+  # Слои
+  layers:
+    - name: Domain
+      collectors:
+        - type: directory
+          regex: /src/\w+/Domain/.*
+
+    - name: Application
+      collectors:
+        - type: directory
+          regex: /src/\w+/Application/.*
+
+    - name: Infrastructure
+      collectors:
+        - type: directory
+          regex: /src/\w+/Infrastructure/.*
+  # Правила
+  ruleset:
+    Domain:
+    Application:
+      - Domain
+    Infrastructure:
+      - Domain
+      - Application
