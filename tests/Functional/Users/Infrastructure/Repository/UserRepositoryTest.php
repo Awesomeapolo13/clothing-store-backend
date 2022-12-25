@@ -4,16 +4,15 @@ namespace App\Tests\Functional\Users\Infrastructure\Repository;
 
 use App\Tests\Resource\Fixture\UserFixture;
 use App\Users\Domain\Factory\UserFactory;
-use Exception;
+use App\Users\Infrastructure\Repository\UserRepository;
 use Faker\Factory;
 use Faker\Generator;
 use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
 use Liip\TestFixturesBundle\Services\DatabaseTools\AbstractDatabaseTool;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use App\Users\Infrastructure\Repository\UserRepository;
 
 /**
- * Функциональные тесты репозитория
+ * Функциональные тесты репозитория.
  */
 class UserRepositoryTest extends WebTestCase
 {
@@ -23,8 +22,9 @@ class UserRepositoryTest extends WebTestCase
     private AbstractDatabaseTool $databaseTool;
 
     /**
-     * Задает переменные для теста
-     * @throws Exception
+     * Задает переменные для теста.
+     *
+     * @throws \Exception
      */
     public function setUp(): void
     {
@@ -36,7 +36,7 @@ class UserRepositoryTest extends WebTestCase
     }
 
     /**
-     * Тестирование добавления пользователя в БД чеерз репозиторий
+     * Тестирование добавления пользователя в БД чеерз репозиторий.
      */
     public function test_user_added_successfully(): void
     {
@@ -52,7 +52,7 @@ class UserRepositoryTest extends WebTestCase
         // act - создаем пользователя
         $this->repository->add($user);
 
-        //assert - проверяем был ли создан пользователь
+        // assert - проверяем был ли создан пользователь
         $existingUser = $this->repository->findByUlid($user->getUlid());
         $this->assertEquals($user->getUlid(), $existingUser->getUlid());
     }

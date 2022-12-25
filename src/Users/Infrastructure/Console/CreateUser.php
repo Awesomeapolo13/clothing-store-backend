@@ -12,7 +12,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 use Webmozart\Assert\Assert;
 
 /**
- * Команда создания нового пользователя
+ * Команда создания нового пользователя.
  */
 #[AsCommand(
     name: 'app:users:create-user',

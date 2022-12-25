@@ -10,16 +10,21 @@ use App\Users\Domain\Entity\User;
 use App\Users\Domain\Repository\UserRepositoryInterface;
 use Faker\Factory;
 use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
+use Liip\TestFixturesBundle\Services\DatabaseTools\AbstractDatabaseTool;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class FindUserByEmailQueryHandlerTest extends WebTestCase
 {
+    private QueryBusInterface $queryBus;
+    private AbstractDatabaseTool $databaseTool;
+
+    /**
+     * @throws \Exception
+     */
     public function setUp(): void
     {
         parent::setUp();
-        $this->faker = Factory::create();
         $this->queryBus = $this::getContainer()->get(QueryBusInterface::class);
-        $this->userRepository = $this::getContainer()->get(UserRepositoryInterface::class);
         $this->databaseTool = static::getContainer()->get(DatabaseToolCollection::class)->get();
     }
 

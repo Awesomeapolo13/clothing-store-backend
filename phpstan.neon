@@ -1,0 +1,5 @@
+parameters:
+#    Уровень строгости проверки
+    level: 6
+#    Параметр для решения проблем с анализом дженериков
+    checkGenericClassInNonGenericObjectType: false

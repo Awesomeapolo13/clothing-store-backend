@@ -11,7 +11,7 @@ class UserDTO
     public function __construct(
         public readonly string $ulid,
         public readonly string $email
-    ){
+    ) {
     }
 
     public static function fromEntity(User $user): self

@@ -8,7 +8,7 @@ use Symfony\Component\Security\Core\Security;
 use Webmozart\Assert\Assert;
 
 /**
- * Получает информацию об авторизованном пользователе
+ * Получает информацию об авторизованном пользователе.
  */
 class UserFetcher implements UserFetcherInterface
 {

@@ -8,17 +8,17 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * Интерфейс авторизованного пользователя
+ * Интерфейс авторизованного пользователя.
  */
 interface AuthUserInterface extends UserInterface, PasswordAuthenticatedUserInterface
 {
     /**
-     * Получение идетнификатора пользователя
+     * Получение идетнификатора пользователя.
      */
-    public function getUlid();
+    public function getUlid(): string;
 
     /**
-     * Получение почты пользователя
+     * Получение почты пользователя.
      */
-    public function getEmail();
+    public function getEmail(): string;
 }

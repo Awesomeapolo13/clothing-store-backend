@@ -1,0 +1,26 @@
+parameters:
+  # Директория со всеми нашими модулями.
+  paths:
+    - ./src
+  exclude_files:
+    - '#.*\/src\/.*\/Infrastructure\/Adapter\/.*#'
+  # Слои - директории с модулями
+  layers:
+    - name: Shared
+      collectors:
+        - type: directory
+          regex: /src/Shared/.*
+
+    - name: Users
+      collectors:
+        - type: directory
+          regex: /src/Users/.*
+
+    - name: Recipes
+      collectors:
+        - type: directory
+          regex: /src/Recipes/.*
+  # Правила (адаптеры не включаем, т.к. они могут иметь любые зависимости)
+  ruleset:
+    Users:
+      - Shared
