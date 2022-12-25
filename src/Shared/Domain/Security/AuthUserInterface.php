@@ -15,10 +15,10 @@ interface AuthUserInterface extends UserInterface, PasswordAuthenticatedUserInte
     /**
      * Получение идетнификатора пользователя.
      */
-    public function getUlid();
+    public function getUlid(): string;
 
     /**
      * Получение почты пользователя.
      */
-    public function getEmail();
+    public function getEmail(): string;
 }

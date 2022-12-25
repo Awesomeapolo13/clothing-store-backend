@@ -20,7 +20,7 @@ class UserFixture extends Fixture
     ) {
     }
 
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $email = $this->getFaker()->email();
         $password = $this->getFaker()->password();

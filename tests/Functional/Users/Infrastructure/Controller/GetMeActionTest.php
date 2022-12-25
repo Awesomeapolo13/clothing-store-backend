@@ -9,7 +9,7 @@ class GetMeActionTest extends WebTestCase
 {
     use FixtureTools;
 
-    public function test_get_me_action()
+    public function test_get_me_action(): void
     {
         $client = static::createClient();
         $user = $this->loadUserFixture();

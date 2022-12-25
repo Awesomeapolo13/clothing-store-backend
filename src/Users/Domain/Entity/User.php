@@ -52,7 +52,7 @@ class User implements AuthUserInterface
      * Очищает чувствительные данные (например пароль)
      * Т.к. он реализуется в сущности, то использовать не рекомендуется (есть угроза удаления пользовательского пароля).
      */
-    public function eraseCredentials()
+    public function eraseCredentials(): void
     {
     }
 
